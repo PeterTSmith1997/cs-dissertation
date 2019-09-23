@@ -2,13 +2,48 @@
 
 \section{MOSCOW}
 \subsection{Functional Requirements and Justification}
-\textbf{must}
+\textbf{Must}
 \begin{itemize}
     \item Allow users to analyse there website access logs.
     \begin{itemize}
         \item Users need to be able to import a large data set of website access logs, maybe a few months at a time to look for trends.
     \end{itemize}
-    \item Allow users to access and view the data from there access logs
+    \item Allow users to access and view the data from there access logs.
+    \begin{itemize}
+        \item Users need to be able to interact with the data within the data set allowing them to make informed decisions on the data.
+    \end{itemize}
+    \item Use some kind of learning loop.
+    \begin{itemize}
+        \item Users may submit small data sets to analyse, so the software needs to be able to use historical data to calculate risk.
+    \end{itemize}
+    \item Allow a admin to update known IP address'.
+    \begin{itemize}
+        \item An admin user needs to be able to add or remove known IP address' for services like google and Bing bots.
+    \end{itemize}
+\end{itemize}
+\textbf{Should}
+\begin{itemize}
+    \item Allow users to filter data on data and time.
+    \begin{itemize}
+        \item Users may know a timeframe for an attack, therefore need to be able to narrow data to this window.
+    \end{itemize}
+\end{itemize}
+\textbf{Could}
+
+\textbf{Won't}
+\begin{itemize}
+    \item Automate the blocking of IP address' 
+    \begin{itemize}
+        \item Users need to maintain control of their own data, so if the program blocked IP's the users would not be in control. In addition to this there are a number or control panels (CPanel, plesk and custom panels) that would need custom APIs for.
+    \end{itemize}
+\end{itemize}
+\subsection{Non-Functional Requirements and Justification}
+\textbf{Must}
+\begin{itemize}
+    \item Be maintainable, with well structured, commented, and documented code
+    \begin{itemize}
+        \item Following good practice and coding standards as well as making use of JavaDoc commenting will allow for code to be understood with greater ease, allowing for simpler maintenance and expansion of the project. 
+    \end{itemize}
 \end{itemize}
 \textbf{Should}
 

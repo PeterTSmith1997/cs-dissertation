@@ -1,9 +1,14 @@
 %!TeX root=TermsOfReference.tex
 
 \section{Background}
+This project will provide a means to analyse large sets of website data for website owners in a convenient way. The website log files contain a tremendous amount of data about a website, for example which IPs have visited the site and the time that they came to the site. While there are tools such as google analytics that provide data on visitors to the site, these tools automatically filter out bots and do not show activity if the user generates an error. This leads to an incomplete picture of a website's traffic. There are solutions that can detect and mitigate a DDOS attack with relative ease, however there is another type of attack named a 'Slow Loris' attack whereby an IP address sends enough data to keep a connection open, but never enough to do anything useful with it. These attacks are very hard to spot and therefore to mitigate because the request could just be coming from a legitimate user with very slow internet. Therefore the only reliable way to detect these attacks is to look at the traffic over a longer period of time. However, due to the format of the log files, this can be very hard to do. Additionally, a website owner receives a new log file every month. If the owner wants to look at traffic over a longer period of time they need to have multiple log files open, making it hard to spot trends.
 
+The program that is created will need to analyse more that one month's worth of data and provide more context to the IP address. For example, location, if the IP is a known search engine bot, and how risky the IP has been on other people's websites. This means that no matter the size of the website the owner has access to a large data pool on risky IPs. 
+
+The idea for this project came from when my business website was attacked. I was fully prepared for a DDOS attack, however I found that there was an IP coming onto my site around 20 times in a minute that would then go away for a number of hours, then come back. The only way that I was able to detect this attack was by reading through a few thousand lines of the website logs and comparing this to spikes in server load. I felt that it would be helpful if there was a program to analyse the data, however the only solutions out there were for large corporations. There wasn't anything for individual sites. Also, there are websites that monitor for suspicious IP addresses. However, these would not take a server log file. Also, the attackers know when they have been found to be a 'dodgy' IP address and can easily change their IP address. Therefore there is a need for a solution that relies on that background data but doesn't reveal what is known about an IP address.
 \section{Proposed Work}
 \label{proposed}
+
 \section{Aims and Objectives}
 There should only be one or two aims
 \subsection{Aims}
