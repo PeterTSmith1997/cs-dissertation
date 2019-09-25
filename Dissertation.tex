@@ -1,10 +1,10 @@
-\documentclass[12pt,twoside]{book}
+\documentclass[10pt,twoside]{book}
 \usepackage[british]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{parskip}
-\usepackage{natbib}
+%\usepackage{natbib}
 \usepackage{pgfgantt}
 \usepackage{lscape}
 \usepackage{pdfpages}
@@ -19,6 +19,10 @@
 \usepackage{listings}
 \usepackage{listingsutf8}
 \usepackage[colorinlistoftodos]{todonotes}
+
+
+\usepackage[style=authoryear-ibid,backend=biber]{biblatex}
+\addbibresource{writing.bib}
 
 \begin{document}
 
@@ -37,13 +41,10 @@
 \part{Evaluation}
 
 
-\bibliographystyle{plainnat}
-\bibliography{writing}
-
+\printbibliography
 \part{Appendices}
 \appendix
 
-\chapter{Terms of Reference}
 \input{tor} %<- note use of \input{} not \include{}
 
 \section{Ethics Form}
