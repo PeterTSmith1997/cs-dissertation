@@ -22,29 +22,30 @@ milestone left shift=0,
 milestone right shift=1,
 ms/.style={inline,
     milestone inline label node/.append style={#1=0pt}}
-]{11/9/17}{18/05/18} %<- Dates Gantt Chart runs from and to
+]{11/9/19}{18/05/20} %<- Dates Gantt Chart runs from and to
 
 \gantttitlecalendar{year,month,week=1}\\
 % Highlight Smesters and Vactions
-\ganttgroup[region=blue!10]{Sem 1}{11/9/17}{8/12/17}
-\ganttgroup[region=red!50]{Christmas}{11/12/17}{1/1/18}
-\ganttgroup[region=blue!50]{Sem 2}{15/1/18}{23/3/18}
-\ganttgroup[region=green!25]{Easter}{26/3/18}{13/4/18}
-\ganttgroup[region=blue!50]{Sem 2}{16/04/18}{27/04/18}\\
+\ganttgroup[region=blue!10]{Sem 1}{23/9/19}{20/12/19}
+\ganttgroup[region=red!50]{Christmas}{20/12/17}{1/1/18}
+\ganttgroup[region=blue!50]{Sem 2}{15/1/20}{23/3/20}
+\ganttgroup[region=green!25]{Easter}{26/3/20}{13/4/20}
+\ganttgroup[region=blue!50]{Sem 2}{16/04/20}{27/04/20}\\
 
 % Project Deadlines (from the slides)
-\ganttmilestone[]{TOR}{13/10/17}
-\ganttmilestone[ms=left]{\bfseries TOR}{10/11/17}
-\ganttmilestone[ms=right]{Draft Analysis}{24/11/17}
-\ganttmilestone[ms=left]{Submit}{19/4/18}
+\ganttmilestone[]{TOR}{28/10/19}
+\ganttmilestone[ms=left]{\bfseries TOR}{28/10/19}
+\ganttmilestone[ms=right]{Draft Analysis}{6/12/19}
+\ganttmilestone[ms=left]{Submit}{30/4/20}
 \ganttnewline[thick]
 
 % --Tasks go here
 % put in a title, a start date, end date...
-\ganttbar{TOR}{11/9/17}{13/10/17}
-\ganttbar[inline]{\emph{revise}}{15/10/17}{10/11/17}\\
-\ganttbar{Analysis}{18/9/17}{24/11/17}\\
-\ganttbar{Design}{31/10/17}{17/1/18}
-\ganttmilestone[ms=right]{Build complete (Obj \ref{write-code})}{18/1/18}\\
-\ganttbar{Exploration}{22/9/17}{15/11/17}
+\ganttbar{TOR}{23/9/19}{21/10/19}
+\ganttbar[inline]{\emph{revise}}{25/10/19}{10/11/19}\\
+\ganttbar{Analysis}{18/9/19}{24/11/19}\\
+\ganttbar{Design}{31/10/19}{17/1/20}\\
+\ganttbar{Build}{17/1/20}{17/2/20}\\
+\ganttbar{Test}{20/2/20}{16/3/20}\\
+\ganttmilestone[ms=right]{Build complete}{18/2/20}
 \end{ganttchart}

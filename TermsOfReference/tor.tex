@@ -1,22 +1,25 @@
 %!TeX root=Dissertation.tex
-\section{Terms Of Reference}
-\subsection*{Background}
-Desktop app. Analyse website log files. Outputs how risky the IPs are based on a variety of factors. A high risk level on an IP means it should probably be blocked. Risky IPs could carry out further attacks on the website and ultimately take it down. This can lead to loss of income and reputation for website owners. Aimed at website owners with little technical knowledge. 
+\section{Background}
+%Desktop app. Analyse website log files. Outputs how risky the IPs are based on a variety of factors. A high risk level on an IP means it should probably be blocked. Risky IPs could carry out further attacks on the website and ultimately take it down. This can lead to loss of income and reputation for website owners. Aimed at website owners with little technical knowledge. 
 
 The product that this project will produce will be a small desktop application capable of analysing large sets of website log data for website owners in a convenient way. Every time a website gets a visitor various properties of their visit are recorded in the log files, for example their IP, the access time, the type of HTTP request sent by the visitor, and the user agent. These files can therefore become quite large and difficult to read. This is a lot of potentially useful data that website owners could miss out on; it is important to analyse these files so that attacks can be identified. It is now even easier for anyone to own their own website (see figure \ref{Number of Websites}), but there are very few solutions available for analysing web traffic.
 
 \begin{figure}[H] \label{Number of Websites} 
     \centering
-    \includegraphics[width=\textwidth]{numberOfWebsites.png}
+    \includegraphics[width=\textwidth]{Images/numberOfWebsites.png}
     \caption{Total number of websites since 2000 (\cite{NumberofWebsites})}
     \label{Total number of websites since 2000}
 \end{figure}
+The majority of website owners are single individuals or small teams [REF] that do not necessarily have the time or resources to keep on top of their web traffic and potential attacks. The proposed application needs to account for the fact that these people will likely not have enough time to go through log files given their size. They also may not have the budget to buy solutions. It should be noted that a lot of web hosts do have automatic attack detection systems in place, as these are normally included in the cost of web hosting packages. However, many web hosts run a large number of servers, each of which often has a large volume of accounts[REF]. Due to their aggregated view of website traffic the network traffic as a whole may look normal to these attack detection systems, however may be out of character for a customer's website in particular.
 
-The majority of website owners are single individuals or small teams [] that do not necessarily have the time or resources to keep on top of their web traffic and potential attacks. The proposed application needs to account for the fact that these people will likely not have enough time to go through log files given their size. They also may not have the budget to buy solutions. It should be noted that a lot of web hosts do have automatic attack detection systems in place, as these are normally included in the cost of web hosting packages. However, many web hosts run a large number of servers, each of which often has a large volume of accounts[]. Due to their aggregated view of website traffic the network traffic as a whole may look normal to these attack detection systems, however may be out of character for a customer's website in particular.
 
 \textbf{to include}
 \begin{itemize}
-    \item 
+    \item Relative ease of detection- DDOS 
+    \item Slow Loris harder to detect \cite{aiello2014line}
+    \item Own experience with website- needing to look through log files to identify attack
+    \item Identifying riskiness of IP- context e.g. country
+    \item Are users able to actually able to analyse the data? Or is it inherently too complicated for a program to be worth writing? Could put in TOR if looking for space, otherwise put somewhere else in Diss. This is one issue that will need looking at.
 \end{itemize}
 
 This project will provide a means to analyse large sets of website data for website owners in a convenient way. The website log files contain a tremendous amount of data about a website, for example which IPs have visited the site and the time that they came to the site. While there are tools such as google analytics that provide data on visitors to the site, these tools automatically filter out bots and do not show activity if the user generates an error. This leads to an incomplete picture of a website's traffic. There are solutions that can detect and mitigate a DDOS attack with relative ease, however there is another type of attack named a 'Slow Loris' attack whereby an IP address sends enough data to keep a connection open, but never enough to do anything useful with it. These attacks are very hard to spot and therefore to mitigate because the request could just be coming from a legitimate user with very slow internet. Therefore the only reliable way to detect these attacks is to look at the traffic over a longer period of time. However, due to the format of the log files, this can be very hard to do. Additionally, a website owner receives a new log file every month. If the owner wants to look at traffic over a longer period of time they need to have multiple log files open, making it hard to spot trends.
@@ -26,7 +29,7 @@ The program that is created will also need to analyse more that one month's wort
 The idea for this project came from when my business website was attacked. I was fully prepared for a DDOS attack, however I found that there was an IP coming onto my site around 20 times in a minute that would then go away for a number of hours before coming back. The only way that I was able to detect this attack was by reading through a few thousand lines of the website logs and comparing this to spikes in server load. I felt that it would be helpful if there was a program to analyse the data, however the only solutions out there were for large corporations. There wasn't anything for individual sites. Also, there are websites that monitor for suspicious IP addresses. However, these would not take a server log file. Also, the attackers know when they have been found to be a suspicious IP address and can easily change their IP address. Therefore there is a need for a solution that relies on that background data but doesn't reveal what is known about an IP address.
 
 The program will need to be easy to use for a non-expert website owner. Most website owners are computer literate however may not know how to access or analyse this type of data. Many website owners use content management systems (CMS). For example, WordPress already has a lot of plugins available for security. While these do a good job at blocking attacks in real-time and preventing invalid logins, they are not able to look at data over longer periods. The program aims to be compatible with all websites. However, because of their market dominance (at time of writing, about 60\% of websites use WordPress)  (\cite{IsItWP}). Indeed, even if a webwsite isn't running a CMS, it is likely to face attacks aimed at such a system. Attacks can be large and varied across different platforms (\cite{patel2013comparative}). Due to the popularity of CMSs and wide variety of attack types, even websites that don't run a CMS may encounter these attacks without being aware.
-\subsection*{Proposed Work}
+\section{Proposed Work}
 \label{proposed}
 
 
@@ -79,51 +82,21 @@ This project will require both networking and program skills. The networking ski
 \end{enumerate}
 \end{enumerate}
 
-\section*{Resources}
+\section{Resources}
 
-\section*{Hardware}
+\section{Hardware}
 
-\section*{Software}
+\section{Software}
 
-\section*{Structure and Contents of the Report}
-\subsection*{Report Structure}
+\section{Structure and Contents of the Report}
+\subsection{Report Structure}
 
-\paragraph{Introduction}  Sets out the background and motivation for the project.  Summarises the work done, the results, the conclusions, and the recommendations for future work.  It is a one chapter summary of the \emph{entire} project.
-
-\paragraph{Defining the problem}  Objective \ref{understand-problem} requires a precise definition of the problem you are solving.  Don't forget to reference good source material \citep{henning_schulzrinne} and \citep{talbot2013}.  See section \ref{proposed}.
-
-\paragraph{Possible Solutions} Discuss the possible solutions, compare the
-alternatives, and select the one to use for the  implementation.
-
-\subsection*{List of Appendices}
+\subsection{List of Appendices}
 What Appendices you will include.  A copy of the TOR should be the first, followed by the Ethics form and the Risk Assessment.
 
 Others might include design documentation, code listings, tables of results (if too large to include in the main text).
 
-\section*{Marking Scheme}
-The marking scheme sets out what criteria we are going to use for the project.
-
-\paragraph{Project Type} General Computing or Software Engineering projects
-
-\paragraph{Project Report}  State which chapters constitute the \emph{Analysis}, the \emph{Synthesis}, and the \emph{Evaluation}.  This help me when marking to know when to stop reading one section and put a mark down for it.
-
-\paragraph{Product}  List the deliverables that make up the \emph{Product}.  Code, design, requirements specifications, test plans, etc.
-
-For the \emph{Fitness for Purpose} and \emph{Build Quality}  list the critera used to asses the product by
-
-\subparagraph{Fitness for Purpose}~
-\begin{itemize}
-	\item meet requirements identified
-	\item other appropriate measures
-\end{itemize}
-
-\subparagraph{Build Quality}~
-\begin{itemize}
-	\item Requirements specification and analysis
-	\item Design Specification
-	\item Code quality
-	\item Test plan and Results
-\end{itemize}
+\section{Marking Scheme}
 
 \clearpage
 
