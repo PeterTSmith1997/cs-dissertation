@@ -1,5 +1,5 @@
 \documentclass[10pt,twoside]{book}
-\usepackage[top=1in, bottom=1.25in, left=1in, right=1in]{geometry}
+\usepackage[a4paper,top=0.9in, bottom=2.54cm, vscale=1, left=0.75in, right=0.75in]{geometry}
 \usepackage[british]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
@@ -8,20 +8,20 @@
 %\usepackage{natbib}
 \usepackage{pgfgantt}
 \usepackage{lscape}
+\usepackage{tabularx}
 \usepackage{pdfpages}
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage[listingsutf8,minted]{tcolorbox}
 \usepackage{hyperref}
 \usepackage[chapter]{tocbibind}
-\usepackage[a4paper,vscale=0.8]{geometry}
 \usepackage{doc}
 \usepackage{minted}
 \usepackage{listings}
 \usepackage{listingsutf8}
 \usepackage[colorinlistoftodos]{todonotes}
 
-
+\usepackage{enumitem}
 \usepackage[style=authoryear-ibid,backend=biber]{biblatex}
 \addbibresource{writing.bib}
 
@@ -47,17 +47,18 @@
 \appendix
 \chapter{Terms of Reference}
 \input{TermsOfReference/tor.tex} %<- note use of \input{} not \include{}
-
-\section{Ethics Form}
+\chapter{Ethics Form}
 If you scan the Ethics form on one of the multifunction printers, you can get a pdf copy.  This can then be included with the \LaTeX\ command
 \begin{tcblisting}{listing only}
 \includegraphics{ethics.pdf}
 \end{tcblisting}
 Assuming of course you have saved the form  as \path{ethics.pdf}
 
-\section{Risk Assessment Form}
+\chapter{Risk Assessment Form}
 Likewise you can scan and include the Risk Assessment Form
 \begin{tcblisting}{listing only}
 \includegraphics{risk-assesment.pdf}
 \end{tcblisting}
+\chapter{Log Book}
+\input{Apdenix/logbook.tex}
 \end{document}
