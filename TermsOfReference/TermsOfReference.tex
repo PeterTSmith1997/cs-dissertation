@@ -15,15 +15,15 @@
 \usepackage[numbib,section]{tocbibind}
 \usepackage[a4paper,vscale=0.85]{geometry}
 \usepackage{doc}
-\usepackage{pdfpages}
+\usepackage[final]{pdfpages}
 
 \usepackage{enumitem}
 \usepackage[style=authoryear-ibid,backend=biber]{biblatex}
 \addbibresource{writing.bib}
-\title{Project Terms of Reference -- }
+\title{Project Terms of Reference -- The Analysis of web traffic, to aid the detection of attacks, for website owners}
 \author{Peter Smith \\
 \small Supervisor - Nick Dalton\\
-\small 2nd Marker TBC
+\small 2nd Marker - Neil Eliot
 }
 
 \includepdfset{pagecommand={}}
@@ -34,16 +34,16 @@
 \input{tor}
 \printbibliography
 \appendix
-
+\newpage
 \section{Ethics Form}
-%%If you scan the Ethics form on one of the multifunction printers, you can get a pdf copy.  This can then be included with the \LaTeX\ command
-\begin{tcblisting}{listing only}
-\includepdf[pages=1-3]{ethics.pdf}
-\end{tcblisting}
+
+\includepdf[pages=-]{ResearchEthics18619.pdf}
+
 %%Assuming of course you have saved the form  as \path{ethics.pdf}
-\includepdf[pages=1-3]{ethics.pdf}
+
 
 \section{Risk Assessment Form}
+TO BE COMPLETED
 %%Likewise you can scan and include the Risk Assessment Form
 \begin{tcblisting}{listing only}
 %\includepdf[pages=1-3]{risk-assesment.pdf}
