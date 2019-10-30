@@ -36,10 +36,16 @@
 
 \mainmatter
 \include{introduction}
-\part{Analysis}
-\include{literature}
+\part{Review of current detection methods}
+\input{Chapter2/Introduction.tex}
+\input{Chapter2/LowbandwidthAttacks.tex}
+\input{Chapter2/SQLinjection.tex}
+\input{Chapter2/OtherCommonAttacks.tex}
+\part{Tools and packages}
+\part{Requirements Specifications}
 \include{MOSCOW}
-\part{Evaluation}
+\part{Testing}
+\part{Conclusions}
 
 
 \printbibliography
@@ -48,12 +54,9 @@
 \chapter{Terms of Reference}
 \input{TermsOfReference/tor.tex} %<- note use of \input{} not \include{}
 \chapter{Ethics Form}
-If you scan the Ethics form on one of the multifunction printers, you can get a pdf copy.  This can then be included with the \LaTeX\ command
-\begin{tcblisting}{listing only}
-\includegraphics{ethics.pdf}
-\end{tcblisting}
-Assuming of course you have saved the form  as \path{ethics.pdf}
-
+\includepdf[pages=-]{TermsOfReference/ResearchEthics18619.pdf}
+\chapter{Participant Information Sheet}
+\input{TermsOfReference/ParticipantInformationSheet.tex}
 \chapter{Risk Assessment Form}
 Likewise you can scan and include the Risk Assessment Form
 \begin{tcblisting}{listing only}
