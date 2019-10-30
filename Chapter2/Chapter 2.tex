@@ -1,0 +1,39 @@
+\documentclass[12pt]{article}
+\usepackage[british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{parskip}
+%\usepackage{natbib}
+\usepackage{pgfgantt}
+\usepackage{lscape}
+\usepackage{pdfpages}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[minted]{tcolorbox}
+\usepackage{hyperref}
+\usepackage[numbib,section]{tocbibind}
+\usepackage[a4paper,vscale=0.85]{geometry}
+\usepackage{doc}
+\usepackage[final]{pdfpages}
+
+\usepackage{enumitem}
+\usepackage[style=authoryear-ibid,backend=biber]{biblatex}
+\addbibresource{writing.bib}
+\title{The Analysis of web traffic, to aid the detection of attacks, for website owners \\
+\small Chapter 2 - draft updated \today}
+
+\author{Peter Smith \\
+\small Supervisor - Nick Dalton\\
+\small 2nd Marker - Neil Eliot
+}
+
+\includepdfset{pagecommand={}}
+\includepdfset{width=\textwidth}
+\begin{document}
+\maketitle
+\input{Chapter2/Introduction.tex}
+\input{Chapter2/LowbandwidthAttacks.tex}
+\input{Chapter2/SQLinjection.tex}
+\input{Chapter2/OtherCommonAttacks.tex}
+\end{document}

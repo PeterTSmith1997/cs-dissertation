@@ -27,15 +27,15 @@
 
 \begin{document}
 
-\frontmatter
-\include{titlepage}
-\include{declaration}
-\include{acknowledgements}
-\include{abstract}
+%\frontmatter
+%\include{titlepage}
+%\include{declaration}
+%\include{acknowledgements}
+%\include{abstract}
 \tableofcontents
 
 \mainmatter
-\include{introduction}
+\input{introduction}
 \part{Review of current detection methods}
 \input{Chapter2/Introduction.tex}
 \input{Chapter2/LowbandwidthAttacks.tex}
@@ -43,25 +43,24 @@
 \input{Chapter2/OtherCommonAttacks.tex}
 \part{Tools and packages}
 \part{Requirements Specifications}
-\include{MOSCOW}
+\input{Chapter4/MOSCOW.tex}
 \part{Testing}
+\input{Chapter6/TestPlan.tex}
 \part{Conclusions}
 
+%\printbibliography
 
-\printbibliography
-\part{Appendices}
-\appendix
-\chapter{Terms of Reference}
-\input{TermsOfReference/tor.tex} %<- note use of \input{} not \include{}
-\chapter{Ethics Form}
-\includepdf[pages=-]{TermsOfReference/ResearchEthics18619.pdf}
-\chapter{Participant Information Sheet}
-\input{TermsOfReference/ParticipantInformationSheet.tex}
-\chapter{Risk Assessment Form}
-Likewise you can scan and include the Risk Assessment Form
-\begin{tcblisting}{listing only}
-\includegraphics{risk-assesment.pdf}
-\end{tcblisting}
-\chapter{Log Book}
-\input{Apdenix/logbook.tex}
+
+%\part{Appendices}
+%\appendix
+%\chapter{Terms of Reference}
+%\input{Apdenix/TermsOfReference/tor.tex} %<- note use of \input{} not \include{}
+%\chapter{Ethics Form}
+\includepdf[pages=-]{Apdenix/TermsOfReference/ResearchEthics18619.pdf}
+%\chapter{Participant Information Sheet}
+%\input{Apdenix/TermsOfReference/ParticipantInformationSheet.tex}
+
+%\chapter{Log Book}
+%\input{Apdenix/logbook.tex}
+
 \end{document}

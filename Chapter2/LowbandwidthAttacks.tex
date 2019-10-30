@@ -1,15 +1,11 @@
 %!TeX root=Dissertation.tex
 
-\section{Low-bandwidth attack detection}
-\begin{itemize}
-    \item What is a Low-bandwidth attack?
-    \item Why are they hard to detect? 
-    \item Detection methods
-    \item How this will feed into my product
-\end{itemize}
+\section{Low-bandwidth attacks} \label{attack1}
+%\begin{itemize}
+ %   \item \textbf{What is a Low-bandwidth attack?}
+  %  \item \textbf{Why are they hard to detect? }
+   % \item Detection methods
+    %\item How this will feed into my product
+%\end{itemize}
 
-A low-rate and low bandwidth attack is a different kind of an attack in comparison to a normal DoS attack. A DoS attack works on overwhelming the server with requests therefore it is easier to detect for example, if you receive a large amount of traffic from a single IP; this is more then likely a DoS attack (REF NEEDED).
-
-\begin{itemize}
-    \item It is a protocol attack, so a layer-7 application attack.
-\end{itemize}
+A low-rate and low bandwidth attack is a different kind of an attack in comparison to a normal DoS attack. A DoS attack works on overwhelming the server with requests therefore it is easier to detect for example, if you receive a large amount of traffic from a single IP; this is more then likely a DoS attack (REF NEEDED). A normal internet request operates based on a GET request to the HTTP, to the web server that allows foe access to the site, a DoS attack has the outcome of creating a disruption between the clients and the web host. High-bandwidth attacks will keep trying to request multiple web pages at the same time to overwhelm the server however, a low-bandwidth attack sends a partial request and then waits 20-30 seconds for example, and then sends new data, just enough to keep the connection open. One type of a Low-bandwidth attack is a slow loris attack; this is a layer-7 application attack, that only requires a small level of band-width and thus, means the attacker can have continual use over their system and carry out normal activity. A web server will have a set number of sockets that it can have open at any one time for example, 10 sockets, the aim of a slow loris is to open all 10 sockets and keep them busy therefore, no new sockets can opened and thus, no client interaction. The difficulty with detecting these types of attacks is that, the legitimate user may just have a slow internet connection and thus, distinguishing these attacks from slow users can be difficult. 
