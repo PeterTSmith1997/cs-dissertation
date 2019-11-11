@@ -21,15 +21,9 @@ The program will need to be easy to use for a non-expert website owner. Most web
 
 \section{Proposed Work}
 \label{proposed}
-The work proposed is to write a piece of software, that will aid website management and detect attacks. The software must be easy to use, therefore the proposed work will also look at issues around user experience and interface design. The finished software should have some kind of self learning mechanism therefore should include a database to store some data. 
+The work proposed is to write a piece of software, that will aid website management and detect traffic patterns that may take the form of a malicious attack. The finished software should also should include a database to store some data. During the main body of research I will debate and justify a type of software for writing the software. As part of the project I will also research and appropriate the most fitting database management system to handle my database storage. 
 
-The software will be written in Java, this is due to the fact that it is architecturally neutral, meaning that the software can be run on any machine. Java also makes it easy to design simple graphical user interfaces so that the user can interact with the software. Other languages were considered such as C, due to the fact that it runs on many Unix systems, which most webservers run. This was discounted due to the fact that most website owners will not have access to the servers themselves. In addition to this, C will not be as easy to implement a user interface on, as I have no experience in writing graphical user interfaces in C. 
-
-The database will be run on Microsoft Access, this is due to the fact Java has an extensive library for interacting with Microsoft Access. I already have experience writing Java applications with Microsoft Access, therefore this will speed up development times. I will be able to quickly integrate the program with Microsoft Access. 
-
-One concern that will need to be addressed in this dissertation centres around the usability of the program. Are users actually able to analyse and take action on the data? Or is it inherently too complicated for a program to be worth writing? Even within the program there will be limitations on how the data will be analysed and presented to the user, and the program would be designed not to take decisions for the user but to present the data in a more understandable manner. Therefore, would the user take the necessary action, and would they even know what action to take? Work done by Ben-Asher and Gonzalez looks at whether cyber security knowledge is needed to detect attacks (\cite{ben2015effects}). This concern will be addressed by looking at relevant literature and may also include some user testing of the software. The user testing component will focus primarily on the usability of the software rather than looking at the outputs that the user gets.
-
-The literature review will also include a critical analysis on current technologies to detect attacks. This literature will help guide the development of the software by illuminating the gaps that exist in current technology. I will also look at whether network architecture can help to stop potential attacks. For example, services such as CloudFlare use an 'Anycast' network, wherein every server on the network has the same IP address, so that when a DDOS attack occurs they can spread the attack over many servers. The attacker cannot tell that they are not all going to the same server (\cite{CloudFlare}). CloudFlare could offer solutions to detect low bandwidth attacks as well. This will be investigated in more detail in the literature review. One potential solution could be for CloudFlare to ask, 'is this user requesting a big enough chunk of data from the website to be defined as legitimate?'. My literature review will answer whether this will work in practice.
+The literature review will include a critical analysis on current technologies to detect a variety attacks. This literature will help guide the development of the software by illuminating the gaps that exist in current technology. I will also look at whether network architecture can help to stop potential attacks. For example, services such as CloudFlare use an 'Anycast' network, wherein every server on the network has the same IP address, so that when a DDOS attack occurs they can spread the attack over many servers. The attacker cannot tell that they are not all going to the same server (\cite{CloudFlare}). CloudFlare could offer solutions to detect low bandwidth attacks as well.
 
 I intend to develop the software using agile techniques. In other words, rather than fully writing the software first and then testing it, the software will be tested as throughout the development process. This will help to make the development time shorter as errors in the code will be fixed before the next stage of the software is written. 
 
@@ -37,9 +31,7 @@ I intend to develop the software using agile techniques. In other words, rather 
 For this project I will have several aims and objectives.
 \subsection{Aims}
 \begin{enumerate}
-    \item Develop a system that is able to identify different types of website attacks and provide the user with an easy to understand report on this.
-    \item To be able to crowd-source data so that the system is able to keep its knowledge about different IPs and the risk that they may be carrying out an attack up-to-date.
-    \item To keep the data about IPs out of the view of the general public so that the attackers are less able to know if they have been found to be suspicious.
+    \item Develop a system that is able to identify different types of website traffic.
 \end{enumerate}
 
 \subsection{Objectives}
@@ -78,7 +70,7 @@ This project will require both networking and program skills. The networking ski
     \item Java will form the main component of the project. I will therefore need to understand Java to a high enough standard to implement the program. Due to the complexities of the program using the right data structures to enable a quick response will be key to the program. 
     \item The majority of my modules have involved the use of Java. Even the modules that did not contain Java as a programming language helped me to develop a conceptual understanding of programming due to the concepts being similar across the board.
 \end{enumerate}
-\item Microsoft access SQL
+\item SQL
 \begin{enumerate}
     \item The main data for the project will be stored in a database, therefore it will be necessary to ensure that my SQL skills are up to scratch in order to store the data correctly and then the retrieval of the correct information will be crucial for this project. Some of the SQL queries may be complex in nature, for example nested queries may be needed.
     \item The module that most helped with SQL was the 'Relational Database' module, which covered the foundation of SQL databases, however SQL databases have also been used in the web modules and with Java in the 'Software Engineering Practice' module. \end{enumerate}
@@ -111,7 +103,8 @@ This project will require both networking and program skills. The networking ski
 \subsection{Report Structure}
 \begin{enumerate} [topsep=0pt,itemsep=-0ex,partopsep=1ex,parsep=1pt,leftmargin=7ex,label=CH.\arabic*]
      \item Introduction
-     \item Review of current detection methods
+     \item Review of current detection methods for low bandwidth attacks
+     \item Review of current detection methods for other types of attacks
      \item Tools and packages 
      \item Requirements Specifications
      \item Testing
@@ -123,16 +116,13 @@ This project will require both networking and program skills. The networking ski
     \item Terms of Reference
     \item Ethics form
     \item Risk Assessment
-    \item Use case diagrams and  descriptions
     \item ERD
-    \item Data dictionary
-    \item Class Diagram 
 \end{enumerate}
 \section{Marking Scheme: Software Engineering Project }
 \textbf{Overview}
 
 \begin{enumerate} [topsep=0pt,itemsep=-0ex,partopsep=1ex,parsep=1pt,label=]
-    \item Report: 40\%
+    \item Report: 60\%
 \begin{enumerate}[topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex,label=]
 \item Abstract \& Introduction 	5\%
 \item Analysis 			30\%
@@ -140,10 +130,10 @@ This project will require both networking and program skills. The networking ski
 \item  Evaluation \& Conclusions 	30\%
 \item Presentation 			5\%
 \end{enumerate}
-\item Product 50\%
+\item Product 30\%
 \begin{enumerate}[topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex,label=]
-\item Fitness for Purpose 		40\%
-\item Build Quality 			60\%
+\item Fitness for Purpose 		50\%
+\item Build Quality 			50\%
 \end{enumerate}
 \item Viva 10\%
 \end{enumerate}
