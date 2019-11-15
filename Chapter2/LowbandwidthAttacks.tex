@@ -2,7 +2,13 @@
 
 \section{Low-bandwidth attacks} \label{attack1}
 
+In order to comprehend the nature of the topics, and the difficulty in detecting Low-bandwidth attacks some other fundamental concepts should be illustrated within the body of this introduction for supplemental understanding of many of the research methods discussed.
+
+Adi's 2017 paper uses a SYN flag variable as a benchmark for threat detection. To understand this variable it we must discribe the mechanics of a TCP connection. TCP is a connection-oriented protocol, a connection needs to be established before two devices can communicate. TCP uses a process called three-way handshake to negotiate the sequence and acknowledgment fields and start the session. Two devices would be in communication, the Client and the Server. The Client initiates the connection by sending the TCP SYN (SYNchronize) packet to the destination Server and the Server receives the packet and responds with an acknowledgement. The Client then acknowledges the response of the Server by sending the acknowledgment back, and a connection is formed. 
+
 A low-rate and low bandwidth attack is a different kind of attack in comparison to a normal DoS attack. A DoS attack works on overwhelming the server with requests, therefore it is more difficult to detect than a high-rate attack. For example, if you receive a large amount of traffic from a single IP; this is more than likely a DoS attack (REF NEEDED). A normal internet request operates based on an HTTP GET request to the web server that allows access to the site. The outcome of a DoS attack is the creation of a disruption between the clients and the web host. High-bandwidth attacks will keep trying to request multiple web pages at the same time to overwhelm the server however, a low-bandwidth attack sends a partial request and then may wait 20-30 seconds for example, it then sends new data, just enough to keep the connection open. One type of a Low-bandwidth attack is a slow loris attack; this is a layer-7 application attack, that only requires a small level of band-width and thus means the attacker can have continual use over their system and carry out normal activity. A web server will have a set number of sockets that it can have open at any one time, for this explanation we will choose to use 10 sockets. The aim of a slow loris is to open all 10 sockets and keep them busy, therefore, no new sockets can be opened and thus, no client interaction will take place. The difficulty with detecting these types of attacks is that the legitimate user may just have a slow internet connection, thus, making distinguishing these attacks from slow users difficult. 
+
+%SYN CRap Here
 
 %\subsection{HTTP/1.1 versus HHTP/2}
 
@@ -10,12 +16,3 @@ A low-rate and low bandwidth attack is a different kind of attack in comparison 
 
 
 %\textcolor{blue}{Although HTTP/2 is a more modern protocol the consensus is that it is a more vulnerable protocol when it comes to low-rate DoS attacks, as it has more threat vectors (\cite{tripathi2018slow}). Adi also notes that "The HTTP/2-standard states that if the host machine does not monitor resource usage, it exposes itself to a risk of a DoS attack". (\cite{Adi2015}).}
-
-
-\subsection{Attack Detection Techniques}
-
-Work done by Adi and Tripathi shows that even though HHTP/2, defined as RCF 7301, is a more  modern protocol, than that of HTTP/1.1, defined as  RCF 2616. Tripathi suggests that HTTP/2 has more threat vectors (\cite{tripathi2018slow}). Adi also notes that "The HTTP/2-standard states that if the host machine does not monitor resource usage, it exposes itself to a risk of a DoS attack" (\cite{Adi2015}).
-
-The largest amount of research done into Low rate Dos attacks is by Erwin Adi, Zubair Baig, Chiou Peng Lam, and Phillip Hingston. The majority of their work looked at using resource utilisation in order to detect Low bandwidth attacks. They set numerous tests to analyse the behaviours of victim machines when subject to Low rate Dos Attacks. The 2016 study carried out 4 varying investigations to analyse the behaviour of a victim machine when subject to large volume low rate DoS attacks. The researchers used Flash CrowdThe team concluded that the HTTP/2 protocol  itself does not restrict the intensity of traffic generated, and that auxiliary mechanisms should be implemented for identifying volumes and patterns of network traffic.
-
-Tripathi's 2018 study, however, took a sample of websites and attempted to detect Low rate attacks by monitoring benchmarking by measuring the Chi squared (X\textsuperscript{\small2} differential value between the expected and observed traffic pattern. Tripathi suggests this approach could detect attacks with high accuracy and may lead to further research to assess further HTTP/2 vulnerabilities and potentially mitigating these threat vectors with fixes (\cite{tripathi2018slow}).
