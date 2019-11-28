@@ -1,12 +1,5 @@
 \documentclass[11pt,twoside]{book}
-%\usepackage[a4paper,top=0.9in, bottom=2.54cm, vscale=1, left=0.75in, right=0.75in]{geometry}
-\addtolength{\evensidemargin}{-.875in}
-	\addtolength{\oddsidemargin}{-.875in}
-	\addtolength{\textwidth}{1.75in}
-
-	\addtolength{\topmargin}{-.875in}
-	\addtolength{\textheight}{1.75in}
-\usepackage[a4paper,vscale=0.8]{geometry}
+\usepackage[a4paper,top=0.9in, bottom=2.54cm, vscale=1, inner=4cm,outer=2cm]{geometry}
 \usepackage[british]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
@@ -27,6 +20,12 @@
 \usepackage{listings}
 \usepackage{listingsutf8}
 \usepackage[colorinlistoftodos]{todonotes}
+\usepackage{float}
+
+\newcommand{\quickwordcount}[]{%
+  \immediate\write18{texcount -total -inc Dissertation.tex > Dissertation.tex.sum }%
+  \input{Dissertation.tex.sum} words%
+}
 
 \usepackage{enumitem}
 \usepackage[style=authoryear-ibid,backend=biber]{biblatex}
@@ -34,41 +33,35 @@
 
 \begin{document}
 
-\frontmatter
-\include{titlepage}
-\include{declaration}
-\include{acknowledgements}
-\include{abstract}
+%\frontmatter
+%\include{titlepage}
+%\include{declaration}
+%\include{acknowledgements}
+%\include{abstract}
 \tableofcontents
 
 \mainmatter
-\input{introduction}
+%\input{introduction}
 \part{Review of current detection methods for low bandwidth attacks}
-\input{Chapter2/Introduction.tex}
-\input{Chapter2/LowbandwidthAttacks.tex}
-\input{Chapter2/attackDetection.tex}
-\input{Chapter2/PortScanning.tex}
+\input{Chapter2/Chapter2.tex}
 \part{Review of current detection methods for other types of attacks}
-\input{Chapter3/Introduction.tex}
-\input{Chapter3/DDOS.tex}
-\input{Chapter3/OtherCommonAttacks.tex}
-\part{Tools and packages}
-\part{Requirements Specifications}
-\part{Testing}
-\part{conclusions}
-\printbibliography
-
-
+\input{Chapter3/Chapter3.tex}
+%\part{Tools and packages}
+%\part{Requirements Specifications}
+%\part{Testing}
+%\part{conclusions}
+%\printbibliography
+\quickwordcount{Dissertation.tex}
 \part{Appendices}
 \appendix
-\chapter{Terms of Reference}
-\input{Apdenix/TermsOfReference/tor.tex} %<- note use of \input{} not \include{}
-\chapter{Ethics Form}
-\includepdf[pages=-]{Apdenix/TermsOfReference/ResearchEthics18619.pdf}
-\chapter{Participant Information Sheet}
-\input{Apdenix/TermsOfReference/ParticipantInformationSheet.tex}
+%\chapter{Terms of Reference}
+%\input{Apdenix/TermsOfReference/tor.tex} %<- note use of \input{} not \include{}
+%\chapter{Ethics Form}
+%\includepdf[pages=-]{Apdenix/TermsOfReference/ResearchEthics18619.pdf}
+%\chapter{Participant Information Sheet}
+%\input{Apdenix/TermsOfReference/ParticipantInformationSheet.tex}
 \input{Chapter4/MOSCOW.tex}
-\chapter{Log Book}
-\input{Apdenix/logbook.tex}
+%\chapter{Log Book}
+%\input{Apdenix/logbook.tex}
 
 \end{document}
