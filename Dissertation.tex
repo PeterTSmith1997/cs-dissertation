@@ -1,5 +1,7 @@
 \documentclass[11pt,twoside]{book}
-\usepackage[a4paper,top=0.9in, bottom=2.54cm, vscale=1, inner=4cm,outer=2cm]{geometry}
+\usepackage[a4paper,top=0.9in, bottom=2.54cm, vscale=1,inner=3cm,outer=2cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
 \usepackage[british]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
@@ -21,16 +23,23 @@
 \usepackage{listingsutf8}
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage{float}
+\usepackage{lastpage}
 
-\newcommand{\quickwordcount}[]{%
-  \immediate\write18{texcount -total -inc Dissertation.tex > Dissertation.tex.sum }%
-  \input{Dissertation.tex.sum} words%
-}
+\usepackage{filecontents}
 
 \usepackage{enumitem}
 \usepackage[style=authoryear-ibid,backend=biber]{biblatex}
 \addbibresource{writing.bib}
-
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[RO,LE]{}
+\fancyfoot{}
+\fancyfoot[LE,RO]{\thepage \hspace{0cm} of \pageref{LastPage}}
+\fancyfoot[LO,CE]{Chapter \thechapter}
+\fancyfoot[CO,RE]{Peter Smith}
+\usepackage{etoolbox}
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
 \begin{document}
 
 %\frontmatter
@@ -41,27 +50,30 @@
 \tableofcontents
 
 \mainmatter
-%\input{introduction}
-\part{Review of current detection methods for low bandwidth attacks}
+\chapter{introduction}
+\chapter{Review of current detection methods for low bandwidth attacks}
 \input{Chapter2/Chapter2.tex}
-\part{Review of current detection methods for other types of attacks}
+\chapter{Review of current detection methods for high bandwidth attacks}
 \input{Chapter3/Chapter3.tex}
-%\part{Tools and packages}
-%\part{Requirements Specifications}
-%\part{Testing}
-%\part{conclusions}
-%\printbibliography
-\quickwordcount{Dissertation.tex}
-\part{Appendices}
-\appendix
+\chapter{Tools, packages and Requirements Specifications}
+\input{Chapter4/Chapter4.tex}
+\chapter{Design and Implementation}
+\input{Chapter5/Chapter5.tex}
+\chapter{conclusions}
+\input{Chapter6/Chapter6.tex}
+\printbibliography
+%\chapter{Appendices}
+%\appendix
 %\chapter{Terms of Reference}
 %\input{Apdenix/TermsOfReference/tor.tex} %<- note use of \input{} not \include{}
 %\chapter{Ethics Form}
 %\includepdf[pages=-]{Apdenix/TermsOfReference/ResearchEthics18619.pdf}
 %\chapter{Participant Information Sheet}
 %\input{Apdenix/TermsOfReference/ParticipantInformationSheet.tex}
-\input{Chapter4/MOSCOW.tex}
+%\chapter{MOSCOW} \label{Moscow}
+%\input{Chapter4/MOSCOW.tex}
 %\chapter{Log Book}
 %\input{Apdenix/logbook.tex}
-
+%\chapter{Log file example}
+%\input{Apdenix/LogFiles.tex}
 \end{document}

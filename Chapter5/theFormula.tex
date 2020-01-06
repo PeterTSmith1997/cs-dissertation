@@ -1,0 +1,46 @@
+\section{The Formula}
+
+The formula is broken down into five distinct categories of information. These five variables were chosen as they each look at a different aspect of an attack and it is believed that a malicious IP instance can be detected and identified by looking at the values of these attributes. 
+
+\subsection{bots}
+
+It is well known that bots are used by numerous online companies in order to index and categorise various webpages. Although some of these instances of traffic can at first sight appear to be malicious due to their architecture, they are in fact a legitimate form of web traffic. For this reason a process is required within the formula to disclude known bots from any further processing within the formula and disregard them at the identification process, preferably at an early stage. \textcolor{red}{For this reason it has been decided to set this risk factor to zero for known bots}. The data for bots is gathered from other websites and deposited in a database where an admin can sort them. The formula will access this database to search for known bots. According to (insert cite) 17.5\% of web traffic was determined to be legitimate bot traffic for example google crawlers. These bots are vital for the maintenance and navigation of the internet, hence the importance of the software to disclude these IP addresses from potential barring. It is suggested that 20.4\% of all webtraffic in 2018 was considered to be malicious and most of which was automated in a bot like format.
+
+
+\subsection{Time between request}
+
+\subsection{Response}
+The response of the server is a good indicator of the legitimately of a request, the server assgins a http code to the response. The decision was made to break down each request/response and apply an applicable risk level for each response code. The justifications for the applicable risk factors shall be discussed within this subsection. 
+
+A \textbf{400} request implies that the IP traffic instance made a BAD REQUEST. This would suggest that the user did not come to the site on a natural path from browsing. It would suggest that an error in logic was established during the request. 
+On some webservers a 400 error message can be broken down into more detail to pinpoint the architectural issue with the request. It should be noted however that the webservers used for testing with this software do not use  IIS 7.0, IIS 7.5, or IIS 8.0 and hence will not break down full details of these 400 errors
+An invalid timeout response could be indicative of a situation where the GET request packet is invalid or has poor flagging standards. This could be a sign of a low rate bandwidth attack and hence it would be appropriate to apply a risk factor association for the greater 400 response error. 
+
+An invalid destination header might suggest an incorrect http pathing request was input and may be indicative of a BOT attempting to formulate potential page targeting unsuccessfully. It may also indicate a handcrafted packet that has been constructed incorrectly or synthetically.
+ 
+
+A \textbf{401} error would indicate that the user is not authenticated to view the webpage. This could be due to an error in the server settings, which may lead to further unauthorised probes to evaluate weaknesses in the server configuration. This could also be an error raised from the occurance of too many consecutive requests from the same IP or that the maximum number of allowed requests has been met. There may, however, be legitimate reasons for a large number of requests from the same IP within a set timeframe. INSERT BS EX HERE!!! These error messages should be given a suitably high risk factor rating as they are unpermitted attempts to access forbidden pages.  
+
+
+A \textbf{403} error is similar to a 401 in that a visitor has passed the authentication stage for reaching a page, however, for some reason they have failed to be permitted access to the page. This could be due to a read, write or execute violation. It could be an error generated from the denial of an IP even if an IP has been rejected due to historical data filtering, this would still generate a 403 error message. This therefore, would suggest that the instance of traffic is most probablly an attack and also most probally automated. This would be fortified by the conclusion that if a gunenuine visitor recieved a 403 message they would eventually stop sending requests, Whereas, an automated bot attacker would send a string of requests and continue to recieve 403 messages.
+
+It 
+
+A \textbf{404}
+
+
+
+No literature used this method, for example a 5XX error may indicate an attack.
+
+\subsection{Pages accessed}
+
+\subsection{Country}
+
+After consideration of data made available online it appears that the country of origin for IP traffic can potentially infer a greater risk. After intensive research it was discovered that the USA at a date of this paper was the origin of 45\% of all malicious traffic. It should be noted that the USA has the third highest population of active internet users in the world. However, this factor does not diminish the phenomenally high percentage of malicious traffic coming from that country and it would be negligent to dismiss a country risk factor for the origin of IP's. It should be noted that some countries, such as China, have a particularly prohibitive firewalling for internet access which is enforced through governmental regulations. This may force malicious traffic from countries such as China through a VPN or proxy, in which case the initial country would be disguised from our software. 
+
+Note: the software has no idea which country the website being analysed is based, hence some countries would be more legitimate (eg a letting agency in the UK would expect a higher rate of UK IP traffic)
+
+. Hence it seemed appropriate to include this as a minimal risk factor in order to assess its effects upon the monitoring of potential threats. 
+
+
+%%The risk factor of an IP is deducted from a formula that looks at a number of variables. These variables are the country from which the IP originated. The frequency at which the IP' is coming to the websites being analysed, and the status codes that are sent back combined with URL's that they are looking for. Based on the literature above, they always looked at the frequency of requests, therefor this was giving some traffic higher threat ratings in their formula BS THIS. It was noticed that many papers failed to look into the risk ratings of IP's logged from certain countries of origin. https://support.microsoft.com/en-us/help/943891/the-http-status-code-in-iis-7-0-iis-7-5-and-iis-8-0
