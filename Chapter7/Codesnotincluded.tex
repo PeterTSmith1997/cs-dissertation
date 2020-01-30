@@ -1,0 +1,10 @@
+\section{Data not included in the Formula}
+
+The formula as previously shown is able to detect attacks with a fairly high degree of accuracy however, during the testing it became apparent that some data was not taken into account. The protocol used for the request; this could have been added to indicate whether the connection was secure due to the fact the HTTP2 only works on a secure connection therefore, this could have been used as an indicator of how secure the request was and maybe increase the risk if HTTP1 was used and detracted a HTTP2 was used. It could however be argued that more risk factor could have been given to HTTP2 due to the fact that \cite{tripathi2018slow} pointed out that HTTP2 had more threat vectors; due to this uncertainty it was decided it was better to leave the protocol out of the formula. 
+
+Due to the time constraints on this project, the time of day of the traffic was not taken into account; this was because to accurately use this, the local time of the IP address would have needed to be calculated and then a further risk factor plan is required. however, due to the 24 hour nature of the internet this would be difficult to apply risk to.
+
+.We did not look at HTTP1/HTTP2 
+.We did not look at the time of day of the requests
+.we did not look at 301 error 302, 402
+.
