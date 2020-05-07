@@ -2,6 +2,7 @@
 \usepackage[a4paper,top=0.9in, bottom=2.54cm, vscale=1,inner=3.5cm,outer=2cm]{geometry}
 \usepackage{setspace}
 \onehalfspacing
+\usepackage{subcaption}
 %\usepackage[doucument]{ragged2e}
 %\raggedright
 \usepackage[british]{babel}
@@ -86,10 +87,10 @@
 %\include{declaration}
 %\include{acknowledgements}
 %\include{abstract}
-\tableofcontents
-
+%\tableofcontents
+%\listoffigures
 \mainmatter
-\chapter{introduction}
+\chapter{Introduction}
 \input{Chapter1/Chapter1.tex}
 \chapter{Review of current detection methods for low bandwidth attacks}
 \input{Chapter2/Chapter2.tex}
@@ -98,16 +99,14 @@
 \chapter{Human factors}\label{Human factors}
 \input{Chapter4/Chapter4.tex}
 \chapter{Tools, packages and Requirements Specifications}
-\input{Chapter5/Chapter4.tex}
+\input{Chapter5/Chapter4.tex} \label{Errorcodes}
 \chapter{Design and Implementation}
 \input{Chapter6/Chapter6.tex}
 \chapter{Testing}
 \input{Chapter7/Chapter6.tex}
 \chapter{conclusions}
 \input{Chapter8/Chapter7.tex}
-\chapter{bibliography}
 \printbibliography
-\chapter{Appendices}
 \appendix
 %\input{Apdenix/main.tex}
 \end{document}

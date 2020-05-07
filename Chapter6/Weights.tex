@@ -1,5 +1,6 @@
 \section{Formula Weights (V.1)} \label{Weights}
 
+
 The following weights are proposed for initial testing.
 
 \begin{table}[H]
@@ -7,28 +8,7 @@ The following weights are proposed for initial testing.
 Response Code & Weights \\
 400           & +0.5    \\
 401           & +5.0    \\
-403           & +2.0    \\
-429           & +2.0    \\
-500           & +0.2    \\
-200           & -1.0   
-\end{tabular}
-\end{table}
-
-If the URL contains 'Wp-Admin' then we shall apply an additional 3 to the risk related factor. If the URL contains 'login' in any case format an application of an additional 2 will be added to the risk factor. If the server responds with no data we shall apply an additional risk factor of 6.
-%the casing format of these particular requests should make no difference, for example a request for a page containing LOGIN, or Login would be treat the same in terms of risk level.
-
-%It was noted that some header codes were not included in the initial formula and hence a second draught was appropriate to include other error messages that may also be indicative of an enhanced risk factor.
-\section{Formula Weights (V.2)}
-
-After testing it was noted that some header codes were not included in the initial formula and hence a second draught was appropriate to include other error messages that may also be indicative of an enhanced risk factor.
-The following weights are proposed for initial testing.
-
-\begin{table}[H]
-\begin{tabular}{ll}
-Response Code & Weights \\
-400           & +0.5    \\
-401           & +5.0    \\
-404           & +? \\
+404           & +1.0 \\
 403           & +2.0    \\
 429           & +2.0    \\
 500           & +0.2    \\
